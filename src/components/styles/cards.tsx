@@ -10,6 +10,8 @@ const FlexContainer = styled.div`
   margin-top: 3rem;
 `
 
+
+
 const Card = styled.div`
   padding: 1.5rem;
   color: inherit;
