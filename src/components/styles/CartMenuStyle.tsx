@@ -1,4 +1,7 @@
+import Image from "next/image";
+import { ReactNode } from "react";
 import styled from "styled-components";
+import X from '../../assets/x.svg'
 
 
 const CartMenuContainer = styled.section`
@@ -37,24 +40,70 @@ const ContainerItems = styled.div`
     }
 
   main{
-    height: 584px;
+    padding-block: 70px;
+    height: 502px;
+    margin-block: 10px;
     width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+    overflow-y: scroll;
+
+    ::-webkit-scrollbar{
+      width: 0px;
+    }
   }
 `
 
+const ButtonCartMenu = styled.button`
+  width: 100%;
+  height: 97px;
+  font-size: 28px;
+  font-weight: 700;
+  line-height: 15px;
+  color: #FFFFFF;
+  border: none;
+  background-color: ${props => props.theme.colors.black};
+`
 
-export function CartMenuStyle() {
+const CloseButton = styled.button`
+  background-color: ${props => props.theme.colors.black};
+  position: absolute;
+  right: 2%;
+  top: 3%;
+  border-radius: 100%;
+  border: none;
+  padding: 8px;
+`
+interface CartMenuStyleProps{
+  children: ReactNode
+  totalPrice: number
+  close: () => void
+}
+
+export function CartMenuStyle({
+  children,
+  close,
+  totalPrice
+}: CartMenuStyleProps) {
   return (
     <CartMenuContainer>
       <ContainerItems>
         <h2>Carrinho de compras</h2>
-
-<main></main>
+        <CloseButton onClick={close}>
+          <Image src={X} alt="fechar menu" />
+        </CloseButton>
+        <main>
+          {children}
+        </main>
         <span>
           <p>Total:</p>
-          <p>R$600</p>
+          <p>R${totalPrice}</p>
         </span>
+
+
       </ContainerItems>
+      <ButtonCartMenu>Finalizar compra</ButtonCartMenu>
     </CartMenuContainer>
   )
 }

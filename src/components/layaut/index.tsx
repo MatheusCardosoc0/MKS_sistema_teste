@@ -12,10 +12,10 @@ const Layaut = ({ children }: { children: ReactNode }) => {
 
   return (
     <Container>
-      <Navbar event={() => setOpenMenu(!opneMenu)} />
+      <Navbar event={() => setOpenMenu(true)} />
 
       {opneMenu && (
-        <CartMenu></CartMenu>
+        <CartMenu close={() => setOpenMenu(false)} />
       )}
 
       <main>

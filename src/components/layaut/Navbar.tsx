@@ -4,7 +4,7 @@ import Cart from '../../assets/Vector.svg'
 import Image from 'next/image'
 
 interface NavbarProps{
-  event: any
+  event: () => void
 };
 
 const Navbar = ({event}: NavbarProps) => {
