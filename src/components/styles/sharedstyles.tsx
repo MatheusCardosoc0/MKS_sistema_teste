@@ -5,13 +5,17 @@ const Container = styled.div`
   height: 100vh;
   margin: 0;
 `
-const Main = styled.main`
-  padding: 5rem 0;
-  flex: 1;
-  display: flex;
-  flex-direction: column;
+const ProductsContainer = styled.main`
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
   justify-content: center;
+  width: 940px;
   align-items: center;
+  justify-items: center;
+  margin-inline: auto;
+  padding-top: 116px;
+  padding-bottom: 172px;
+  grid-gap: 22px;
 `
 
 const Title = styled.h1`
@@ -54,16 +58,19 @@ const CardCart = styled.button`
   border-radius: 8px;
   width: 90px;
   height: 45px;
+  cursor: pointer;
 `
 
-const CodeTag = styled.code`
-  background: #fafafa;
-  border-radius: 5px;
-  margin: 0 0.75rem;
-  padding: 0.75rem;
-  font-size: 1.1rem;
-  font-family: Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono,
-    Bitstream Vera Sans Mono, Courier New, monospace;
+const FooterContainer = styled.footer`
+  width: 100%;
+  height: 34px;
+  background-color: #EEEEEE;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 12px;
+  color: #000000;
+  line-height: 15px;
 `
 
-export { Container, NavbarContainer, Title, CardCart }
+export { Container, NavbarContainer, Title, CardCart, FooterContainer, ProductsContainer }

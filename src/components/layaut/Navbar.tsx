@@ -3,21 +3,24 @@ import { CardCart, NavbarContainer, Title } from '../styles/sharedstyles'
 import Cart from '../../assets/Vector.svg'
 import Image from 'next/image'
 
-const Header = () => {
+interface NavbarProps{
+  event: any
+};
+
+const Navbar = ({event}: NavbarProps) => {
   return (
     <NavbarContainer>
       <Title>MKS
         <span>Sistemas</span>
       </Title>
 
-      <CardCart >
+      <CardCart onClick={event}>
         <Image src={Cart}
           alt="Simbolo de um carriinho de compras" />
-
           0
       </CardCart>
     </NavbarContainer>
   )
 }
 
-export default Header
+export default Navbar
