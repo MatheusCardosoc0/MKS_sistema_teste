@@ -4,6 +4,7 @@ const Container = styled.div`
   width: 100%;
   height: 100vh;
   margin: 0;
+  padding-top: 112px;
 `
 const ProductsContainer = styled.main`
   display: grid;
@@ -47,6 +48,8 @@ const NavbarContainer = styled.nav`
   align-items: center;
   height: 101px;
   padding-inline: 65px;
+  position: fixed;
+  top: 0;
 `
 const CardCart = styled.button`
   padding: 12px;

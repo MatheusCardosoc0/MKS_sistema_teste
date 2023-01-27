@@ -26,7 +26,8 @@ const ProductInformation = styled.div`
   
   div{
     display: flex;
-    gap: 16px;
+    justify-content: space-between;
+    gap: 20px;
     align-items: center;
 
     h2{
@@ -53,7 +54,7 @@ const ProductInformation = styled.div`
 const ButtonProduct = styled.button`
   background-color: ${props => props.theme.colors.primary};
   width: 100%;
-  height: 100%;
+  height: 31px;
   border: none;
   font-size: 14px;
   line-height: 18px;
@@ -61,31 +62,33 @@ const ButtonProduct = styled.button`
 `
 
 interface CardProductProps {
-  urlImage: string | any
+  urlImage: string
   price: number
   title: string
   description: string
+  addToCart: () => void
 }
 
 export default function CardProduct({
   description,
   price,
   title,
-  urlImage
+  urlImage,
+  addToCart
 }: CardProductProps) {
   return (
     <CardProductContainer>
-      <Image src={urlImage} alt="title" />
+      <img src={urlImage} alt="title" width={111} height={138} />
 
       <ProductInformation>
         <div>
           <h2>{title}</h2>
-          <span>R${price}</span>
+          <span>R${price.toString().slice(0, -3)}</span>
         </div>
         <p>{description}</p>
       </ProductInformation>
 
-      <ButtonProduct>
+      <ButtonProduct onClick={addToCart}>
         <Image src={IconButton} alt={"Adicionar ao carrinho"} />
       </ButtonProduct>
     </CardProductContainer>
