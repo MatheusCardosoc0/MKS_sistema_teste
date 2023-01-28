@@ -14,8 +14,6 @@ const Navbar = ({event}: NavbarProps) => {
   const productsInCart = useSelector(productsInCartArray)
   const [totalProductsQuantity, setTotalProductsQuantity] = useState(0)
 
-  console.log(productsInCart)
-
   function GetTotalQuantity(){
     let value = 0
     productsInCart.map(product => {

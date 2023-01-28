@@ -12,11 +12,6 @@ const Layaut = ({ children }: { children: ReactNode }) => {
 
   const productsInCart = useSelector(productsInCartArray)
 
-  console.log(productsInCart)
-
-
-  console.log(opneMenu)
-
   return (
     <Container>
       <Navbar event={() => setOpenMenu(true)} />

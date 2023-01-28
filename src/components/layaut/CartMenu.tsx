@@ -10,8 +10,6 @@ const CartMenu = ({close} : {close: () => void}) => {
   const productsInCart = useSelector(productsInCartArray)
   const [totalValue, setTotalValue] = useState(0)
 
-  console.log(productsInCart)
-
   const dispatch = useDispatch()
 
 
