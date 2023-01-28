@@ -2,6 +2,7 @@ import Image from "next/image";
 import styled from "styled-components";
 import addIcon from '../../assets/+.svg';
 import decreaseIcon from '../../assets/-.svg';
+import Close from '../../assets/x.svg'
 
 
 
@@ -59,40 +60,63 @@ const QuantityProductButton = styled.div`
   }
 `
 
+const ButtonClose = styled.button`
+  background-color: ${props => props.theme.colors.black};
+  padding: 4px;
+  border-radius: 100%;
+  width: 18px;
+  height: 18px;
+  border: none;
+  display: flex;
+  align-items: center;
+  position: absolute;
+  right: 6.5%;
+  margin-bottom: 90px;
+`
+
 interface CardProductsInCartProps {
   title: string
   price: number
-  imageUrl: string 
-  add: () => void
-  decrease: () => void
+  imageUrl: string
+  addToCart: () => void
+  decreaseToCart: () => void
+  removeProductToCart: () => void
   quantity: number
 }
 
 export function CardProductsInCart({
-  add,
+  addToCart,
   imageUrl,
   price,
-  decrease,
+  decreaseToCart,
   title,
-  quantity
+  quantity,
+  removeProductToCart
+
 }: CardProductsInCartProps) {
   return (
     <CardProductsInCartContainer>
+
+      <ButtonClose onClick={removeProductToCart}>
+        <Image src={Close} alt="Remover produto do carrinho" width={8} />
+      </ButtonClose>
 
       <img src={imageUrl} alt={title} width={46} height={57} />
 
       <h3>{title}</h3>
 
+      
+
       <QuantityProductButton>
         <p>Qtd:</p>
         <span>
-          <button onClick={decrease}>
+          <button onClick={decreaseToCart}>
             <Image src={decreaseIcon} alt="reduzir quantidade" width={10} />
           </button>|
           <button>
             {quantity}
           </button>|
-          <button onClick={add}>
+          <button onClick={addToCart}>
             <Image src={addIcon} alt="aumentar quantidade" width={10} />
           </button>
         </span>

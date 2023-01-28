@@ -32,12 +32,14 @@ const CartMenu = ({close} : {close: () => void}) => {
       totalPrice={totalValue}>
 
       {productsInCart.map(product => (
-        <CardProductsInCart imageUrl={product.product.photo}
+        <CardProductsInCart key={product.product.id}
+        imageUrl={product.product.photo}
         quantity={product.totalQuantity}
         title={product.product.name}
-        add={() => dispatch(addProductToCart(product))}
-        decrease={() => dispatch(removeProductToCart(product))}
-        price={product.product.price * product.totalQuantity} />
+        addToCart={() => dispatch(addProductToCart(product))}
+        decreaseToCart={() => dispatch(removeProductToCart(product))}
+        price={product.product.price * product.totalQuantity}
+        removeProductToCart={() => dispatch(deleteProductToCart(product))} />
       ))}
 
       

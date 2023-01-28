@@ -69,8 +69,8 @@ const ButtonCartMenu = styled.button`
 const CloseButton = styled.button`
   background-color: ${props => props.theme.colors.black};
   position: absolute;
-  right: 2%;
-  top: 3%;
+  right: 4%;
+  top: 4%;
   border-radius: 100%;
   border: none;
   padding: 8px;
