@@ -62,9 +62,10 @@ const QuantityProductButton = styled.div`
 interface CardProductsInCartProps {
   title: string
   price: number
-  imageUrl: string | any
+  imageUrl: string 
   add: () => void
   decrease: () => void
+  quantity: number
 }
 
 export function CardProductsInCart({
@@ -72,12 +73,13 @@ export function CardProductsInCart({
   imageUrl,
   price,
   decrease,
-  title
+  title,
+  quantity
 }: CardProductsInCartProps) {
   return (
     <CardProductsInCartContainer>
 
-      <Image src={imageUrl} alt={title} width={50} />
+      <img src={imageUrl} alt={title} width={46} height={57} />
 
       <h3>{title}</h3>
 
@@ -88,7 +90,7 @@ export function CardProductsInCart({
             <Image src={decreaseIcon} alt="reduzir quantidade" width={10} />
           </button>|
           <button>
-            1
+            {quantity}
           </button>|
           <button onClick={add}>
             <Image src={addIcon} alt="aumentar quantidade" width={10} />

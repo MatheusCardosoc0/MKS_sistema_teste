@@ -57,5 +57,5 @@ export const {addProductToCart, deleteProductToCart,removeProductToCart} = cartP
 export default cartProductLogic.reducer
 
 export const productsInCartArray = (state: any) => {
-  return state.productCartLogic as Product[]
+  return state.productCartLogic as InitialStateProps[]
 }
