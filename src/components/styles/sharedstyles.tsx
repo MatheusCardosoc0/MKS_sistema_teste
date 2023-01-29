@@ -87,6 +87,13 @@ const FooterContainer = styled.footer`
   font-size: 12px;
   color: #000000;
   line-height: 15px;
+  position: absolute;
+  bottom: -1;
+  z-index: -1;
+
+  @media (max-width: 768px) {
+    width: 1000px;
+  }
 `
 
 export { Container, NavbarContainer, Title, CardCart, FooterContainer, ProductsContainer }

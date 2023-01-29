@@ -25,6 +25,10 @@ const CartMenuContainer = styled.section`
     position: relative;
     bottom: 0;
   }
+
+  @media (max-width: 768px) {
+    height: 100%;
+  }
 `
 
 const ContainerItems = styled.div`
@@ -64,6 +68,9 @@ const ButtonCartMenu = styled.button`
   color: #FFFFFF;
   border: none;
   background-color: ${props => props.theme.colors.black};
+  position: absolute;
+  bottom: 0%;
+
 `
 
 const CloseButton = styled.button`
