@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react'
 import { CardProductsInCart } from '../styles/CardProductsInCart'
 import { CartMenuStyle } from '../styles/CartMenuStyle'
-import Apple from "../../assets/apple-watch.png"
 import { useDispatch, useSelector } from 'react-redux'
 import { addProductToCart, deleteProductToCart, productsInCartArray, removeProductToCart } from '../../store/Products.store'
+import { InsertTotalValue } from '../../utils/getValuesOfProductsInCart'
 
 const CartMenu = ({close} : {close: () => void}) => {
 
@@ -13,16 +13,10 @@ const CartMenu = ({close} : {close: () => void}) => {
   const dispatch = useDispatch()
 
 
-  function InsertTotalValue() {
-    let value = 0
-    productsInCart.map(product => {
-      value += product.totalQuantity * product.product.price
-    })
-    setTotalValue(value)
-  }
+ 
 
   useEffect(() => {
-    InsertTotalValue()
+    InsertTotalValue(productsInCart, setTotalValue)
   }, [productsInCart])
 
   return (

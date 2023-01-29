@@ -1,11 +1,7 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit"
-import { Product } from "../utils/interfaces";
+import { InitialStateProps } from "../utils/interfaces";
 
-interface InitialStateProps{
-  product: Product
-  totalQuantity: number
-  totalValueOfThisProduct: number
-}
+
 
 const initialState: InitialStateProps[] = []
 

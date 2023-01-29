@@ -13,3 +13,9 @@ export interface QueryProducts{
   count: number
   products: Product[]
 }
+
+export interface InitialStateProps{
+  product: Product
+  totalQuantity: number
+  totalValueOfThisProduct: number
+}

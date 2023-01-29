@@ -29,12 +29,19 @@ const Title = styled.h1`
   text-decoration: none;
   gap: 8px;
 
+  @media (max-width: 768px) {
+      font-size: 32px;
+    }
+
   span {
     font-size: 20px;
     position: relative;
     font-weight: 300;
     bottom: 0;
     
+    @media (max-width: 768px) {
+      font-size: 16px;
+    }
   }
 `
 
@@ -51,6 +58,7 @@ const NavbarContainer = styled.nav`
   position: fixed;
   top: 0;
 `
+
 const CardCart = styled.button`
   padding: 12px;
   font-size: 18px;
@@ -62,6 +70,11 @@ const CardCart = styled.button`
   width: 90px;
   height: 45px;
   cursor: pointer;
+
+  @media (max-width: 768px) {
+    width: 70px;
+    font-size: 16px;
+  }
 `
 
 const FooterContainer = styled.footer`

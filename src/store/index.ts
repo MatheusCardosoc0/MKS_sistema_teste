@@ -1,4 +1,4 @@
-import { configureStore, getDefaultMiddleware } from "@reduxjs/toolkit";
+import { configureStore} from "@reduxjs/toolkit";
 import { ApiProducts } from "./GetProducts";
 import productCartLogic from './Products.store'
 

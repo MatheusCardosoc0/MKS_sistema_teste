@@ -4,6 +4,7 @@ import Cart from '../../assets/Vector.svg'
 import Image from 'next/image'
 import { useSelector } from 'react-redux'
 import { productsInCartArray } from '../../store/Products.store'
+import { GetTotalQuantity } from '../../utils/getValuesOfProductsInCart'
 
 interface NavbarProps{
   event: () => void
@@ -14,16 +15,9 @@ const Navbar = ({event}: NavbarProps) => {
   const productsInCart = useSelector(productsInCartArray)
   const [totalProductsQuantity, setTotalProductsQuantity] = useState(0)
 
-  function GetTotalQuantity(){
-    let value = 0
-    productsInCart.map(product => {
-      value += product.totalQuantity
-    })
-    setTotalProductsQuantity(value)
-  }
-
+  
   useEffect(() => {
-    GetTotalQuantity()
+    GetTotalQuantity(productsInCart, setTotalProductsQuantity)
   },[productsInCart])
 
   return (

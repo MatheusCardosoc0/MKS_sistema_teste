@@ -10,12 +10,12 @@ export default function App({ Component, pageProps }: AppProps) {
   return (
     <>
       <Provider store={store}>
-      <ThemeProvider theme={theme}>
-        <GlobalStyle />
-        <Layaut>
-          <Component {...pageProps} />
-        </Layaut>
-      </ThemeProvider>
+        <ThemeProvider theme={theme}>
+          <GlobalStyle />
+          <Layaut>
+            <Component {...pageProps} />
+          </Layaut>
+        </ThemeProvider>
       </Provider>
     </>
   )

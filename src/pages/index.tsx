@@ -1,18 +1,10 @@
-import {
-  Container, ProductsContainer,
-} from '../components/styles/sharedstyles'
-import Header from '../components/layaut/Navbar'
+import { ProductsContainer } from '../components/styles/sharedstyles'
 import CardProduct from '../components/styles/CardProduct'
-import Apple from '../assets/apple-watch.png'
 import { useGetProductsQuery } from '../store/GetProducts'
 import { useDispatch } from 'react-redux'
 import { addProductToCart } from '../store/Products.store'
 
-const a = [1, 2, 3, 4, 5, 6, 7, 8]
 
-/**
- * 
- */
 
 export default function Home() {
 
@@ -30,7 +22,7 @@ export default function Home() {
             urlImage={""}
             price={999999999}
             description={"carregando..."}
-            addToCart={() => {}} />
+            addToCart={() => { }} />
         )) :
         data.products.map(item => (
           <CardProduct key={item.id}
