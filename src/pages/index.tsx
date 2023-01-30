@@ -3,6 +3,7 @@ import CardProduct from '../components/styles/CardProduct'
 import { useGetProductsQuery } from '../store/GetProducts'
 import { useDispatch } from 'react-redux'
 import { addProductToCart } from '../store/Products.store'
+import Head from 'next/head'
 
 
 
@@ -15,6 +16,7 @@ export default function Home() {
 
   return (
     <ProductsContainer>
+
       {isFetching || error ?
         Skeleton?.map(item => (
           <CardProduct key={item}

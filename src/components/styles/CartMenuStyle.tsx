@@ -36,7 +36,7 @@ const ContainerItems = styled.div`
   padding: 40px;
     
   h2{
-    width: 140px;
+    width: 160px;
     height: 56px;
     font-size: 27px;
     line-height: 33px;
